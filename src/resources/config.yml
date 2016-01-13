@@ -1,0 +1,26 @@
+# To disable database DAO, set driver: none. All output will then be to file, exclusively.
+
+configuration_file_version: 1
+
+debug: true
+
+dao:
+  database:
+    driver: mysql
+    host:
+    port: 2306
+    username:
+    password:
+    database: monitoring
+    schema:
+  file:
+    base: monitoring
+    rollover_size: true
+    rollover_time: true
+    max_size: 10485760
+    max_days: 2
+
+monitor:
+  frequency: 20
+  adaptive: true
+  dataport: 38849

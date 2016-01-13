@@ -1,0 +1,23 @@
+name: ${project.name}
+main: com.programmerdan.minecraft.civmonitor.CivMonitor
+author: ProgrammerDan
+authors: []
+version: ${project.version}
+commands:
+   civmonitor:
+      description: CivMonitor actively watches your server health. Type this command at console to get a dump of the most recent data.
+      usage: /civmonitor
+      permissions: CivMonitor.active
+permissions:
+    CivMonitor.*:
+      description: Gives access to all CivMonitor commands
+      default: op
+      children:
+        CivMonitor.passive: true
+        CivMonitor.active: true
+    CivMonitor.passive:
+      description: Allows you to use any command that reads data without altering configs or performing actions 
+      default: op
+    CivMonitor.active:
+      description: Allows you to use any command that sets data, alters configs, or performs actions
+      default: op
